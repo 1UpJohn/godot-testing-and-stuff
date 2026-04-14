@@ -26,6 +26,10 @@ var count:
 				tween_color(0.7,0.0,0.0)
 				pop_label()
 				print("Reached 100")
+			if _count == 150:
+				tween_color(0.5,0.0,0.0)
+				pop_label()
+				print("Reached 150")
 				
 			
 		if wot:
