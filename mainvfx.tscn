@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnrps8tqku8cu"]
+[gd_scene format=3 uid="uid://cnrps8tqku8cu"]
 
 [ext_resource type="Texture2D" uid="uid://b5l41q0rxkisx" path="res://T_fire.png" id="1_bedab"]
 [ext_resource type="Texture2D" uid="uid://bcd6vpkhjry7v" path="res://T_spark.png" id="2_c562y"]
@@ -83,22 +83,39 @@ color = Color(2, 1.2, 0.5, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_d07h5"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=693637129]
 
-[node name="firevfx" type="Node3D" parent="."]
+[node name="firevfx" type="Node3D" parent="." unique_id=664285480]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="firevfx"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="firevfx" unique_id=902680012]
 material_override = SubResource("StandardMaterial3D_f6bse")
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_dso8g")
 draw_pass_1 = SubResource("QuadMesh_eoifr")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="firevfx"]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="firevfx" unique_id=1156111460]
 material_override = SubResource("StandardMaterial3D_vqnqx")
 amount = 3
-lifetime = 1.9200000000000002
+lifetime = 1.92
 process_material = SubResource("ParticleProcessMaterial_kppc4")
 draw_pass_1 = SubResource("QuadMesh_d07h5")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1725481398]
 transform = Transform3D(1, 0, 0, 0, 0.9514441, 0.30782163, 0, -0.30782163, 0.9514441, 0, 1.6807519, 2.3178754)
+
+[node name="Control" type="Control" parent="." unique_id=1416959217]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+
+[node name="Button" type="Button" parent="Control" unique_id=1885979097]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0040001
+anchor_bottom = 1.003
+offset_top = 578.0
+offset_right = 0.40795898
+offset_bottom = 0.05596924
+theme_override_font_sizes/font_size = 24
+text = "Flame simulation (Godot)"
