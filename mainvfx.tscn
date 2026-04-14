@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b5l41q0rxkisx" path="res://T_fire.png" id="1_bedab"]
 [ext_resource type="Texture2D" uid="uid://bcd6vpkhjry7v" path="res://T_spark.png" id="2_c562y"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="4_f6bse"]
+[ext_resource type="PackedScene" uid="uid://cj51dd420qkwh" path="res://m4a1.glb" id="4_r0vmo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6bse"]
 transparency = 1
@@ -101,6 +102,13 @@ lifetime = 1.92
 process_material = SubResource("ParticleProcessMaterial_kppc4")
 draw_pass_1 = SubResource("QuadMesh_d07h5")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="firevfx" unique_id=743815888]
+light_color = Color(0.95696026, 0.45456046, 0.24458697, 1)
+light_energy = 16.0
+light_indirect_energy = 5.752
+light_volumetric_fog_energy = 10.347
+light_size = 0.099
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1725481398]
 transform = Transform3D(1, 0, 0, 0, 0.9514441, 0.30782163, 0, -0.30782163, 0.9514441, 0, 1.6807519, 2.3178754)
 
@@ -150,3 +158,6 @@ offset_left = 0.08795166
 offset_top = -0.13601685
 offset_right = -0.18395996
 offset_bottom = -0.14401245
+
+[node name="m4a1" parent="." unique_id=455473830 instance=ExtResource("4_r0vmo")]
+transform = Transform3D(0.06166406, 0.08670276, 0.26964304, 0, 0.27167693, -0.09180668, -0.2384888, 0.022418015, 0.06971937, -0.2979281, 0.12517297, -1.1184615)
