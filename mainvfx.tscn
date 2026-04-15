@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b5l41q0rxkisx" path="res://T_fire.png" id="1_bedab"]
 [ext_resource type="Texture2D" uid="uid://bcd6vpkhjry7v" path="res://T_spark.png" id="2_c562y"]
+[ext_resource type="Script" uid="uid://vw1uik1lapom" path="res://control.gd" id="3_mr55d"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="4_f6bse"]
+[ext_resource type="Script" uid="uid://nf13altn2cux" path="res://creds.gd" id="4_mr55d"]
 [ext_resource type="PackedScene" uid="uid://cj51dd420qkwh" path="res://m4a1.glb" id="4_r0vmo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6bse"]
@@ -118,6 +120,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_mr55d")
 
 [node name="Button" type="Button" parent="Control" unique_id=1885979097]
 layout_mode = 1
@@ -159,5 +164,35 @@ offset_top = -0.13601685
 offset_right = -0.18395996
 offset_bottom = -0.14401245
 
+[node name="creds" type="Button" parent="Control" unique_id=832883153]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11100001
+anchor_bottom = 0.096
+offset_right = 0.57199097
+offset_bottom = -0.20800018
+theme_override_font_sizes/font_size = 30
+text = "<< Credits >>"
+script = ExtResource("4_mr55d")
+
+[node name="creds_text" type="Label" parent="Control" unique_id=301450517]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.005
+anchor_bottom = 1.0
+offset_right = 0.26000977
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "Made by :
+ 1upjohn
+ rower"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="m4a1" parent="." unique_id=455473830 instance=ExtResource("4_r0vmo")]
-transform = Transform3D(0.06166406, 0.08670276, 0.26964304, 0, 0.27167693, -0.09180668, -0.2384888, 0.022418015, 0.06971937, -0.2979281, 0.12517297, -1.1184615)
+transform = Transform3D(0.1714162, 0.0643144, 0.20001593, 1.77688e-09, 0.2716769, -0.09180667, -0.17690633, 0.062318474, 0.19380863, 1.1819584, 0.12517297, -0.45785642)
