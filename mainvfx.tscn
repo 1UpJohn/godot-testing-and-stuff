@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="4_f6bse"]
 [ext_resource type="Script" uid="uid://nf13altn2cux" path="res://creds.gd" id="4_mr55d"]
 [ext_resource type="PackedScene" uid="uid://cj51dd420qkwh" path="res://m4a1.glb" id="4_r0vmo"]
+[ext_resource type="Script" uid="uid://b42poyb8v3beg" path="res://character_body_3d.gd" id="7_gkjbp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6bse"]
 transparency = 1
@@ -87,6 +88,17 @@ color = Color(2, 1.2, 0.5, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_d07h5"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gkjbp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5odb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k616r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fs8qq"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gkjbp"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
 [node name="Node3D" type="Node3D" unique_id=693637129]
 
 [node name="firevfx" type="Node3D" parent="." unique_id=664285480]
@@ -110,6 +122,7 @@ light_energy = 16.0
 light_indirect_energy = 5.752
 light_volumetric_fog_energy = 10.347
 light_size = 0.099
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1725481398]
 transform = Transform3D(1, 0, 0, 0, 0.9514441, 0.30782163, 0, -0.30782163, 0.9514441, 0, 1.6807519, 2.3178754)
@@ -195,4 +208,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="m4a1" parent="." unique_id=455473830 instance=ExtResource("4_r0vmo")]
-transform = Transform3D(0.1714162, 0.0643144, 0.20001593, 1.77688e-09, 0.2716769, -0.09180667, -0.17690633, 0.062318474, 0.19380863, 1.1819584, 0.12517297, -0.45785642)
+transform = Transform3D(0.1714162, 0.0643144, 0.20001593, 1.77688e-09, 0.2716769, -0.09180667, -0.17690633, 0.062318474, 0.19380863, 1.1819584, 0.32218385, -0.45785642)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="m4a1" unique_id=1764826656]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="m4a1/StaticBody3D" unique_id=1261718909]
+transform = Transform3D(-3.3186426, 0, -2.3841858e-07, -1.4901161e-07, 2.3652778, 1.1920929e-07, 0, 8.940697e-08, 6.699771, 0, 0, 0)
+shape = SubResource("BoxShape3D_gkjbp")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2042863227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1138461, 0, 0)
+script = ExtResource("7_gkjbp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1165211582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6555628, 0.009736121)
+shape = SubResource("CapsuleShape3D_d5odb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=18278780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6665869, 0)
+cast_shadow = 2
+mesh = SubResource("CapsuleMesh_k616r")
+
+[node name="Plane" type="MeshInstance3D" parent="." unique_id=2116165558]
+transform = Transform3D(18.39774, 0, 0, 0, 0.095648944, 0, 0, 0, 8.4854765, 0.22875059, -0.18619692, 0.05339241)
+mesh = SubResource("BoxMesh_fs8qq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane" unique_id=1869883422]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D" unique_id=608960226]
+shape = SubResource("ConcavePolygonShape3D_gkjbp")
