@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://sgjc5qmo32i5"
 path.s3tc="res://.godot/imported/m4a1_m4a1_Material_1_Metallic-m4a1_Material_1_Roughness.png-48a9022486d49d05f50d2fe6db0b37c2.s3tc.ctex"
+path.etc2="res://.godot/imported/m4a1_m4a1_Material_1_Metallic-m4a1_Material_1_Roughness.png-48a9022486d49d05f50d2fe6db0b37c2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://m4a1_m4a1_Material_1_Metallic-m4a1_Material_1_Roughness.png"
-dest_files=["res://.godot/imported/m4a1_m4a1_Material_1_Metallic-m4a1_Material_1_Roughness.png-48a9022486d49d05f50d2fe6db0b37c2.s3tc.ctex"]
+dest_files=["res://.godot/imported/m4a1_m4a1_Material_1_Metallic-m4a1_Material_1_Roughness.png-48a9022486d49d05f50d2fe6db0b37c2.s3tc.ctex", "res://.godot/imported/m4a1_m4a1_Material_1_Metallic-m4a1_Material_1_Roughness.png-48a9022486d49d05f50d2fe6db0b37c2.etc2.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cnrps8tqku8cu"]
 
 [ext_resource type="Texture2D" uid="uid://b5l41q0rxkisx" path="res://T_fire.png" id="1_bedab"]
+[ext_resource type="Script" uid="uid://o1dtjotcw6it" path="res://mainvfx.gd" id="1_d5odb"]
 [ext_resource type="Texture2D" uid="uid://bcd6vpkhjry7v" path="res://T_spark.png" id="2_c562y"]
 [ext_resource type="Script" uid="uid://vw1uik1lapom" path="res://control.gd" id="3_mr55d"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="4_f6bse"]
@@ -100,6 +101,7 @@ color = Color(2, 1.2, 0.5, 1)
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Node3D" type="Node3D" unique_id=693637129]
+script = ExtResource("1_d5odb")
 
 [node name="firevfx" type="Node3D" parent="." unique_id=664285480]
 
@@ -123,9 +125,6 @@ light_indirect_energy = 5.752
 light_volumetric_fog_energy = 10.347
 light_size = 0.099
 shadow_enabled = true
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1725481398]
-transform = Transform3D(1, 0, 0, 0, 0.9514441, 0.30782163, 0, -0.30782163, 0.9514441, 0, 1.6807519, 2.3178754)
 
 [node name="Control" type="Control" parent="." unique_id=1416959217]
 layout_mode = 3
@@ -228,6 +227,12 @@ shape = SubResource("CapsuleShape3D_d5odb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6665869, 0)
 cast_shadow = 2
 mesh = SubResource("CapsuleMesh_k616r")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D" unique_id=1806950916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7573766, 0)
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D" unique_id=665421755]
 
 [node name="Plane" type="MeshInstance3D" parent="." unique_id=2116165558]
 transform = Transform3D(18.39774, 0, 0, 0, 0.095648944, 0, 0, 0, 8.4854765, 0.22875059, -0.18619692, 0.05339241)
